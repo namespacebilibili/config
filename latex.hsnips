@@ -1,0 +1,102 @@
+context "math()"
+snippet \\ "frac" iA
+\frac{$1}{$2}$0
+endsnippet
+
+snippet ima "inline math" iA 
+$$1$$0
+endsnippet
+
+context "math()"
+snippet intg "integrate" iA 
+\int_{$1}^{$2}$3\mathrm{d}$4
+endsnippet
+
+context "math()"
+snippet pw "power" iA 
+^{$1}$2
+endsnippet
+
+context "math()"
+snippet xb "xiabiao" iA 
+_{$1}$2
+endsnippet
+
+snippet lemma "lemma" iA
+\begin{lemma}
+$1
+\end{lemma}
+endsnippet
+
+snippet problem "problem" iA
+\begin{problem}
+$1
+\end{problem}
+endsnippet
+
+snippet definition "definition" iA
+\begin{definition}
+$1
+\end{definition}
+endsnippet
+
+snippet note "note" iA
+\begin{note}
+$1
+\end{note}
+endsnippet
+
+snippet remark "remark" iA
+\begin{remark}
+$1
+\end{remark}
+endsnippet
+
+snippet solution "solution" iA
+\begin{solution}
+$1
+\end{solution}
+endsnippet
+
+snippet ~~ " appro equals" iA
+\thickapprox 
+endsnippet
+
+snippet == " constan equals" iA
+\equiv 
+endsnippet
+
+context "math()"
+snippet dfl "differential" iA 
+\frac{\mathrm{d}$1}{\mathrm{d}$2}$0
+endsnippet
+
+context "math()"
+snippet ptl "partial" iA 
+\frac{\partial$1}{\partial$2}$0
+endsnippet
+
+snippet item "itemize" iA
+\begin{itemize}
+$1
+\end{itemize}
+endsnippet
+
+snippet enum "enumerate" iA
+\begin{enumerate}[$1]
+$2
+\end{enumerate}
+endsnippet
+
+snippet HEAD "headfile" iA
+%!TEX program = xelatex
+\documentclass[cn,hazy,blue,14pt,screen]{elegantnote}
+\title{$1}
+
+\author{$2}
+
+\begin{document}
+\maketitle
+$3
+\end{document}
+endsnippet
