@@ -1,0 +1,212 @@
+{
+    "latex-workshop.latex.magic.args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-shell-escape",
+        "%DOC%"
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-shell-escape",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "XeLaTeX",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "PDFLaTeX",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "BibTeX",
+            "tools": [
+                "bibtex"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xelatex -> pdftex",
+            "tools": [
+                "xelatex",
+                "pdflatex",
+            ]
+        },
+        {
+            "name": "pdflatex->xelatex",
+            "tools": [
+                "pdflatex",
+                "xelatex",
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+    ],
+    "latex-workshop.view.pdf.viewer": "tab",
+    "C_Cpp.autocomplete": "Default",
+    "editor.minimap.enabled": true,
+    "[cpp]": {
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
+        "editor.suggest.showFunctions": true,
+        "editor.suggest.showFiles": true,
+        "editor.wordBasedSuggestions": true,
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "python.pythonPath": "/Users/muzhancun/anaconda/envs/py3/bin/python3",
+    "[c]": {
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    "cpp-format.executable": "/path/to/clang-format",
+    "cpp-format.executable.windows": "/path/to/clang-format",
+    "cpp-format.executable.linux": "/path/to/clang-format",
+    "cpp-format.executable.osx": "/path/to/clang-format",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "powermode.presets": "particles",
+    "code-runner.ignoreSelection": true,
+    "code-runner.runInTerminal": true,
+    "markdown.extension.math.enabled": false,
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        }
+    },
+    "programming-grid.info.courseId": "8e6b7866023a4489babca3f56973f317",
+    "programming-grid.info.password": "muzhancun66",
+    "programming-grid.info.username": "2100017790",
+    "luogu.defaultLanguage": "C++11",
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.tabCompletion": "on",
+    "markdown-preview-enhanced.previewTheme": "night.css",
+    "markdown-preview-enhanced.enableScriptExecution": true,
+    "markdown-preview-enhanced.codeBlockTheme": "one-dark.css",
+    "editor.fontFamily": "Fira Code iScript,Fira Code,Menlo",
+    "editor.fontSize": 15,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.fileDirectoryAsCwd": true,
+    "python.terminal.executeInFileDir": true,
+    "terminal.integrated.inheritEnv": false,
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true
+    },
+    "editor.unicodeHighlight.allowedCharacters": {
+        "：": true,
+        "（": true
+    },
+    "files.autoSaveDelay": 2000,
+    "latex-workshop.view.pdf.backgroundColor": "#000000",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "editor.fontWeight": "normal",
+    "notebook.lineNumbers": "on",
+    "powermode.shake.intensity": 0,
+    "clangd.detectExtensionConflicts": false,
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "powermode.enabled": true,
+    "powermode.combo.counterEnabled": "show",
+    "powermode.combo.location": "statusbar",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "C_Cpp.errorSquiggles": "Enabled",
+    "markdown-preview-enhanced.latexEngine": "xelatex",
+    "cmake.configureSettings": {},
+    // "vscode_custom_css.imports": [
+    //     "file:///Users/muzhancun/Documents/theme.css",
+    //     "file:///Users/muzhancun/Documents/theme.js"
+    // ],
+    "editor.fontLigatures": true,
+    "latex-workshop.view.pdf.ref.viewer": "tabOrBrowser",
+    "settingsSync.ignoredExtensions": [],
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.gpuAcceleration": "off",
+    "errorLens.fontStyleItalic": true,
+    "oneDarkPro.italic": false,
+    //"vsicons.icons": "If true, we'll automatically resume programs launched and waiting on `--inspect-brk`",
+    "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/jdk-18.0.1.1.jdk/Contents/Home",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.codeActionsOnSave": {},
+    "typescript.suggest.paths": false,
+    "javascript.suggest.paths": false,
+    "window.zoomLevel": 1
+}
