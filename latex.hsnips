@@ -1,102 +1,88 @@
-context "math()"
-snippet \\ "frac" iA
-\frac{$1}{$2}$0
-endsnippet
+\documentclass[UTF8]{ctexart}
+\usepackage[dvipsnames,svgnames]{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable, theorems}
+\usepackage{pdfpages}
+\usepackage{geometry}
+\usepackage{lipsum}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows.meta}
+\pagestyle{empty}
+\usepackage[inline]{enumitem}
+%\usepackage{newtxtext}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{transparent}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathabx}
+\newcommand{\incfig}[1]{%
+\def\svgwidth{\columnwidth}
+\import{./figure/}{#1.pdf_tex}
+}
+\tcbuselibrary{most}
+\geometry{a4paper,centering,scale=0.8}
+\definecolor{tipscolor}{rgb}{0.77,0.72,0.65} % 莫兰迪棕色
+%\definecolor{OldLace}{rgb}{}
 
-snippet ima "inline math" iA 
-$$1$$0
-endsnippet
-
-context "math()"
-snippet intg "integrate" iA 
-\int_{$1}^{$2}$3\mathrm{d}$4
-endsnippet
-
-context "math()"
-snippet pw "power" iA 
-^{$1}$2
-endsnippet
-
-context "math()"
-snippet xb "xiabiao" iA 
-_{$1}$2
-endsnippet
-
-snippet lemma "lemma" iA
-\begin{lemma}
-$1
-\end{lemma}
-endsnippet
-
-snippet problem "problem" iA
-\begin{problem}
-$1
-\end{problem}
-endsnippet
-
-snippet definition "definition" iA
-\begin{definition}
-$1
-\end{definition}
-endsnippet
-
-snippet note "note" iA
-\begin{note}
-$1
-\end{note}
-endsnippet
-
-snippet remark "remark" iA
-\begin{remark}
-$1
-\end{remark}
-endsnippet
-
-snippet solution "solution" iA
-\begin{solution}
-$1
-\end{solution}
-endsnippet
-
-snippet ~~ " appro equals" iA
-\thickapprox 
-endsnippet
-
-snippet == " constan equals" iA
-\equiv 
-endsnippet
-
-context "math()"
-snippet dfl "differential" iA 
-\frac{\mathrm{d}$1}{\mathrm{d}$2}$0
-endsnippet
-
-context "math()"
-snippet ptl "partial" iA 
-\frac{\partial$1}{\partial$2}$0
-endsnippet
-
-snippet item "itemize" iA
-\begin{itemize}
-$1
-\end{itemize}
-endsnippet
-
-snippet enum "enumerate" iA
-\begin{enumerate}[$1]
-$2
-\end{enumerate}
-endsnippet
-
-snippet HEAD "headfile" iA
-%!TEX program = xelatex
-\documentclass[cn,hazy,blue,14pt,screen]{elegantnote}
 \title{$1}
-
-\author{$2}
+\author{MZC}
 
 \begin{document}
-\maketitle
-$3
+\newtcbtheorem[number within=section]{lemma}{Lemma}{colback=Emerald!10,colframe=cyan!40!black,fonttitle=\bfseries}{th}
+\newtcbtheorem[number within=section]{definition}{Definition}{colback=SeaGreen!10!CornflowerBlue!10,colframe=RoyalPurple!55!Aquamarine!100!,fonttitle=\bfseries}{th}
+\newtcbtheorem[number within=section]{theorem}{theorem}{colback=red!5,colframe=red!75!black,fonttitle=\bfseries}{}
+\newtcbtheorem[number within=section]{prof}{Proof}{colback=JungleGreen!10!Cerulean!15,colframe=CornflowerBlue!60!Black}{}
+%\newtcbtheorem[number within=section]{problem}{Problem}{colback=OliveGreen!10,colframe=Green!70}{}
+%\newtcbtheorem[number within=section]{solution}{Solution}{colback=JungleGreen!10!Cerulean!15,colframe=CornflowerBlue!60!Black}{}
+%\newtcbtheorem[number within=section]{note}{Note}{enhanced,breakable,left=12pt,right=12pt,coltitle=white,colbacktitle=tipscolor,attach boxed title to top left={yshifttext=-1mm},boxed title style={skin=enhancedfirst jigsaw,arc=1mm,bottom=0mm,boxrule=0mm},boxrule=1pt, colback=OldLace, colframe=tipscolor, sharp corners=northwest,title=\vspace{3mm},arc=1mm}
+%\newtcbtheorem[number within=section]{remark}{Remark}{enhanced,breakable,left=12pt,right=12pt,coltitle=white,colbacktitle=tipscolor,attach boxed title to top left={yshifttext=-1mm},boxed title style={skin=enhancedfirst jigsaw,arc=1mm,bottom=0mm,boxrule=0mm},boxrule=1pt, colback=OldLace, colframe=tipscolor, sharp corners=northwest,title=\vspace{3mm},arc=1mm}
+\newtcolorbox{note}[2][]
+{enhanced,breakable,
+left=12pt,right=12pt,% 左右边距
+% fonttitle=\bfseries, % 可以设置标题是否粗体
+coltitle=white, % 标题字体颜色
+colbacktitle=tipscolor, % 标题背景颜色
+attach boxed title to top left={yshifttext=-1mm},
+boxed title style={skin=enhancedfirst jigsaw,arc=1mm,bottom=0mm,boxrule=0mm},
+boxrule=1pt, % 边框线宽
+colback=OldLace, % 文本框背景颜色
+colframe=tipscolor, % 框线颜色
+sharp corners=northwest,
+% drop fuzzy shadow, % 可以选择是否设置阴影效果
+arc=1mm,
+title=#2,
+#1
+}
+\newtcolorbox{remark}[2][]
+{enhanced,breakable,
+left=12pt,right=12pt,% 左右边距
+% fonttitle=\bfseries, % 可以设置标题是否粗体
+coltitle=white, % 标题字体颜色
+colbacktitle=tipscolor, % 标题背景颜色
+attach boxed title to top left={yshifttext=-1mm},
+boxed title style={skin=enhancedfirst jigsaw,arc=1mm,bottom=0mm,boxrule=0mm},
+boxrule=1pt, % 边框线宽
+colback=OldLace, % 文本框背景颜色
+colframe=tipscolor, % 框线颜色
+sharp corners=northwest,
+% drop fuzzy shadow, % 可以选择是否设置阴影效果
+arc=1mm,
+title=#2,
+#1
+}
+\linespread{1.5}
+\newcounter{problemname}
+\newenvironment{problem}{\stepcounter{problemname}\par\noindent\textsc{Problem \arabic{section}.\arabic{subsection}.\arabic{problemname}. }}{}
+\newenvironment{solution}[1]{\par\noindent\textsc{Solution#1. }}{\hfill $\square$\par}
+\newenvironment{solution2}[1]{\par\noindent\textsc{Solution#1. }}{}
+\newenvironment{Note}{\par\noindent\textsc{Note. }}{\par}
+% \newenvironment{note}{\par\noindent\textsc{Note of Problem \arabic{problemname}. }}{\\\par}
+\newcommand{\ndj}{\text{int}\,}
 \end{document}
-endsnippet
